@@ -3,6 +3,7 @@ package rocks.zipcode;
 import org.junit.Assert;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class StackTest {
     @org.junit.Before
@@ -16,40 +17,56 @@ public class StackTest {
     @org.junit.Test
     public void TestStackPop(){
         //given
-        ArrayList<String> people = new ArrayList<String>();
-        people.add("Bob");
-        people.add("Mary");
-        people.add("Ana");
+        Stack<String> people = new Stack<>();
+        people.push("Bob");
+        people.push("Mary");
+        people.push("Ana");
         //when
-        String expectedBrand = "Sally";
-        people.set(0,"Sally");
+        String expectedName = "Ana";
         //actual
-        String actualBrand = people.get(0);
+        String actualName = people.pop();
         //then
-        Assert.assertEquals(expectedBrand,actualBrand) ;
+        Assert.assertEquals(expectedName,actualName) ;
     }
 
     @org.junit.Test
     public void TestStackPush(){
         //given
+        Stack<String> people = new Stack<>();
+        people.push("Bob");
+        people.push("Mary");
         //when
+        String expectedName = "Ana";
+        people.push(expectedName);
         //actual
+        String actualName = people.peek();
         //then
+        Assert.assertEquals(expectedName, actualName);
     }
 
     @org.junit.Test
     public void TestStackPeek(){
         //given
+        Stack<String> people = new Stack<>();
+        people.push("Bob");
+        people.push("Mary");
+        people.push("Ana");
         //when
+        String expectedName = "Ana";
         //actual
+        String actualName = people.peek();
         //then
+        Assert.assertEquals(expectedName, actualName);
     }
 
     @org.junit.Test
     public void TestStackIsEmpty(){
         //given
+        Stack<String> people = new Stack<>();
+        people.push("Bob");
         //when
-        //actual
+        people.pop();
         //then
+        Assert.assertTrue(people.isEmpty());
     }
 }
