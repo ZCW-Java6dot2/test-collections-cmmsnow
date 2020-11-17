@@ -1,6 +1,8 @@
 package gettestie.src.main.java.rocks.zipcode;
 
-public class Address {
+import java.util.Comparator;
+
+public class Address{
     private String street;
     private String town;
     private String postCode;
@@ -28,5 +30,17 @@ public class Address {
      */
     public String toString() {
         return street + "\n" + town + " " + postCode + "\n" + country + "\n";
+    }
+
+//    @Override
+//    public int compareTo(String otherPostCode) {
+//        return Integer.compare(this.postCode.length(), otherPostCode.length());
+//    }
+
+//    public Comparator<String> PostCodeComparison = new Comparator<String>() {
+//        @Override
+//        public int compare(String , String o2) {
+//            return 0;
+//        }
     }
 }
